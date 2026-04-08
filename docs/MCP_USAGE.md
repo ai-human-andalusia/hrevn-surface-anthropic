@@ -7,11 +7,8 @@ only through skill guidance plus a local runner.
 
 ## Companion server
 
-Use the local companion server in the same HREVN workspace:
-- `../hrevn-mcp-server`
-
-This is the current engineering path for Anthropic-first MCP testing.
-A dedicated public repo for the MCP server can follow later.
+Use the companion MCP server repo:
+- `https://github.com/ai-human-andalusia/hrevn-mcp-server`
 
 It exposes:
 - `baseline_check`
@@ -32,7 +29,8 @@ export HREVN_API_KEY="replace-me"
 ## Install the MCP server
 
 ```bash
-cd ../hrevn-mcp-server
+git clone https://github.com/ai-human-andalusia/hrevn-mcp-server
+cd hrevn-mcp-server
 pip install -e .
 ```
 

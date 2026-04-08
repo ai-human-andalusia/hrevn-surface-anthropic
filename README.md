@@ -60,7 +60,7 @@ The command above should return a `BaselineResult` JSON.
 If you want Claude Code to discover HREVN as MCP tools rather than only through
 skill guidance plus a local runner, use the companion MCP server at:
 
-- `../hrevn-mcp-server` inside the current HREVN workspace
+- `https://github.com/ai-human-andalusia/hrevn-mcp-server`
 
 See:
 - `docs/MCP_USAGE.md`
