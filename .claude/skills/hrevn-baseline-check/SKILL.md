@@ -41,3 +41,6 @@ has been explicitly changed.
 If the user asks to run a first test, use:
 - `examples/baseline_check_request.json`
 - then report the `BaselineResult` returned by the runner
+
+If Claude Code has HREVN MCP tools configured, prefer the `baseline_check` MCP tool
+over shelling out through the local runner.

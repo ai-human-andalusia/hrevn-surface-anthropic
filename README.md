@@ -2,7 +2,7 @@
 
 **Un solo núcleo. Tres superficies. Mismo resultado verificable.**
 
-This repo is the Anthropic-facing HREVN surface: three skills plus a local runner that bridges to the live HREVN managed runtime.
+This repo is the Anthropic-facing HREVN surface: three skills plus a local runner, with an MCP path now available for Anthropic-first tool use against the live HREVN managed runtime.
 
 ## Why HREVN
 
@@ -32,11 +32,11 @@ resume through the runner bridge to the managed runtime.
 - an Anthropic-facing skill repo
 - a thin public surface
 - a local runner bridge to `https://api.hrevn.com`
-- a clean base for a later MCP iteration
+- an MCP-ready path for Claude Code tool use
 
 ## What it is not yet
 - not a native remote-skill marketplace package
-- not a finished MCP package
+- not yet a polished end-user MCP distribution
 - not the private HREVN runtime
 - not the private commercial toolkit
 
@@ -54,6 +54,17 @@ python3 scripts/hrevn_anthropic_runner.py baseline-check \
 ```
 
 The command above should return a `BaselineResult` JSON.
+
+## Optional MCP path
+
+If you want Claude Code to discover HREVN as MCP tools rather than only through
+skill guidance plus a local runner, use the companion MCP server at:
+
+- `../hrevn-mcp-server` inside the current HREVN workspace
+
+See:
+- `docs/MCP_USAGE.md`
+- `docs/claude_code_mcp_config.example.json`
 
 ## Test in Claude Code
 
@@ -80,6 +91,7 @@ skill instructions -> local runner -> https://api.hrevn.com
 - the local runner can call the live managed API
 - the baseline-check example returns a real `BaselineResult`
 - the current path is usable today without waiting for MCP
+- the Anthropic surface now has a documented MCP upgrade path for the same backend
 
 ## Included
 - `.claude/skills/...`
@@ -94,11 +106,12 @@ The live managed endpoint is:
 Current path:
 - skill guidance now
 - local runner bridge now
-- MCP later
+- MCP available as the next bridge when Claude Code is configured for it
 
 ## Current status
 This is a public Anthropic surface candidate with a real testing path today.
-It is intentionally honest about the current runner-first runtime model.
+It is intentionally honest about the current runner-first path while also exposing
+an MCP route for Anthropic-first testing.
 
 ## Rule
 The skills guide behavior, but the runtime truth stays in the managed API and private HREVN core.

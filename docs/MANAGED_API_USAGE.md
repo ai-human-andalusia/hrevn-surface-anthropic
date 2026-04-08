@@ -55,3 +55,22 @@ Run a baseline check on examples/baseline_check_request.json
 ```
 
 The skill should not embed HREVN business logic in prompt text.
+
+## MCP bridge
+
+Anthropic is now also the first surface with a concrete MCP path.
+
+Use the companion local MCP server at:
+- `../hrevn-mcp-server`
+
+That MCP server exposes:
+- `baseline_check`
+- `profile_validate`
+- `generate_bundle`
+- `verify_bundle`
+
+against the same managed backend:
+- `https://api.hrevn.com`
+
+See:
+- `docs/MCP_USAGE.md`
