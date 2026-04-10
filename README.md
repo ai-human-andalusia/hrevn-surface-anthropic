@@ -48,14 +48,29 @@ resume through the runner bridge to the managed runtime.
 ## Quick Start
 
 ```bash
-git clone https://github.com/ai-human-andalusia/hrevn-surface-anthropic
-cd hrevn-surface-anthropic
+pipx install hrevn-anthropic-runner
 export HREVN_API_KEY="<issued-alpha-key>"
-python3 scripts/hrevn_anthropic_runner.py baseline-check \
-  --input examples/baseline_check_request.json
+hrevn-anthropic health-check
+hrevn-anthropic self-test
+hrevn-anthropic baseline
 ```
 
-The command above should return a `BaselineResult` JSON.
+If you prefer the repo checkout instead, you can still do:
+
+```bash
+git clone https://github.com/ai-human-andalusia/hrevn-surface-anthropic
+cd hrevn-surface-anthropic
+pipx install .
+```
+
+If `pipx` is not available, a local fallback is:
+
+```bash
+python3 -m pip install .
+```
+
+The installable command should return a real `BaselineResult` JSON once auth is
+set correctly.
 
 For the MCP-first and guided alpha path, see:
 - `docs/ANTHROPIC_ALPHA_TESTING.md`
@@ -82,8 +97,8 @@ See:
 3. First verify the runner directly:
 
 ```bash
-python3 scripts/hrevn_anthropic_runner.py baseline-check \
-  --input examples/baseline_check_request.json
+hrevn-anthropic self-test
+hrevn-anthropic baseline
 ```
 
 4. Then ask Claude Code:
@@ -105,7 +120,9 @@ skill instructions -> local runner -> https://api.hrevn.com
 ## Included
 - `.claude/skills/...`
 - `docs/MANAGED_API_USAGE.md`
+- `pyproject.toml`
 - `scripts/hrevn_anthropic_runner.py`
+- `src/hrevn_anthropic_runner/...`
 - `examples/baseline_check_request.json`
 
 ## Managed Runtime Bridge

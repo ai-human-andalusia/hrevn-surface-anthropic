@@ -19,18 +19,28 @@ Claude Code -> HREVN MCP server -> `https://api.hrevn.com`
 ## Quick proof before Claude Code
 
 If you want to verify the runtime path before opening Claude Code, you can use
-the local runner:
+the installable runner:
 
 ```bash
+pipx install hrevn-anthropic-runner
 export HREVN_API_BASE_URL="https://api.hrevn.com"
 export HREVN_API_KEY="replace-with-issued-alpha-key"
-python3 scripts/hrevn_anthropic_runner.py baseline-check \
-  --input examples/baseline_check_request.json
+hrevn-anthropic health-check
+hrevn-anthropic self-test
+hrevn-anthropic baseline
 ```
 
 Expected result:
 - a real `BaselineResult`
 - returned from the live managed backend
+
+If you want the repo checkout instead, use:
+
+```bash
+git clone https://github.com/ai-human-andalusia/hrevn-surface-anthropic
+cd hrevn-surface-anthropic
+pipx install .
+```
 
 ## MCP setup
 
@@ -80,4 +90,4 @@ with:
 - this is a technical alpha
 - the runtime truth is in the managed API
 - the MCP server is the supported Anthropic path in this alpha
-- the local runner is a quick proof path, not the main Claude Code path
+- the installable runner is the quick proof path, not the main Claude Code path
