@@ -4,6 +4,10 @@ This repo is the Anthropic-facing HREVN surface for Claude Code: skills, a local
 runner, and an MCP path for resumable workflows, tamper-evident receipts, and
 audit-ready traceability against the live HREVN managed runtime.
 
+Public package:
+
+- `https://pypi.org/project/hrevn-anthropic-runner/`
+
 ## Why HREVN
 
 AI agents and multi-step workflows fail in ambiguous ways. When a sequence is
